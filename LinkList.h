@@ -1,4 +1,5 @@
 #ifndef _LINK_LIST_H
+#define _LINK_LIST_H
 #include<iostream>
 #include<malloc.h>
 

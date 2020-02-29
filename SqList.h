@@ -1,4 +1,5 @@
 #ifndef _SqlList_H
+#define _SqlList_H
 #include<iostream>
 #include<malloc.h>
 
