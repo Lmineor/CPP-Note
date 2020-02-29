@@ -1,4 +1,4 @@
-#include "SqStack.h"
+#include "include/SqStack.h"
 
 void InitStack(SqStack &S) 
 {

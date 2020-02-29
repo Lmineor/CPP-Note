@@ -1,4 +1,4 @@
-#include "LinkList.h"
+#include "include/LinkList.h"
 
 LinkList InsertList1(LinkList &L, ElemType e){
     //从表尾到表头逆向建立单链表L,每次均在头结点之后插入元素
