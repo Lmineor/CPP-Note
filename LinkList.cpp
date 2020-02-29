@@ -1,6 +1,6 @@
-#include"LinkList.h"
+#include "LinkList.h"
 
-LinkList InsertList1(LinkList &L, ElemTpye e){
+LinkList InsertList1(LinkList &L, ElemType e){
     //从表尾到表头逆向建立单链表L,每次均在头结点之后插入元素
     LNode *s;
     s = (LNode*)malloc(sizeof(LNode));
@@ -10,7 +10,7 @@ LinkList InsertList1(LinkList &L, ElemTpye e){
     return L;
 }
 
-LinkList InsertList2(LinkList &L, ElemTpye e){
+LinkList InsertList2(LinkList &L, ElemType e){
     //从表头到表尾正向建立单链表L，每次均在表尾插入元素
     LNode *s, *r = L;
     while (r->next) r = r->next; // 找到最后一个结点
@@ -38,7 +38,7 @@ LNode *GetElem(LinkList L,int i)
 	return p; //返回第i个结点的指针，如果i大于表长，p=NULL，直接返回p即可
 }
 
-LNode *LocateElem(LinkList L, ElemTpye e)
+LNode *LocateElem(LinkList L, ElemType e)
 {
     LNode *p = L->next;
     while (p!=NULL && p->data!=e) p = p->next;
@@ -58,7 +58,8 @@ int Length(LinkList L)
     return i;
 }
 
-bool PrintList(LinkList L){
+bool PrintList(LinkList L)
+{
     LNode *p = L->next;
     if(p == NULL) return false;
     while (p)

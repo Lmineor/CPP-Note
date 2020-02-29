@@ -1,6 +1,7 @@
 #include "SqList.h"
 
-bool InitList(SqList &L){
+bool InitList(SqList &L)
+{
     //构造一个空的线性表L
     L.data=(ElemType*)malloc(sizeof(ElemType) * InitSize);
     if(!L.data) exit(OVERFLOW);//存储分配失败
@@ -10,7 +11,8 @@ bool InitList(SqList &L){
     return true;
 }//InitList
 
-bool InsertList(SqList &L, int i, ElemType e){
+bool InsertList(SqList &L, int i, ElemType e)
+{
     //将元素e插入到顺序表L中第i个位置
     if(i < 1 || i > L.length + 1) return false;
     if(L.length >= L.MaxSize) return false;
@@ -22,7 +24,8 @@ bool InsertList(SqList &L, int i, ElemType e){
 }
 
 
-bool ListDelte(SqList &L, int i, ElemType &e){
+bool ListDelte(SqList &L, int i, ElemType &e)
+{
     if(i < 1 || i > L.length) return false;
     e = L.data[i-1];
     for(int j = i; j<L.length; j++)
@@ -31,7 +34,8 @@ bool ListDelte(SqList &L, int i, ElemType &e){
     return true;
 }
 
-int LocateElem(SqList L, ElemType e){
+int LocateElem(SqList L, ElemType e)
+{
     int i;
     for(i = 0;i < L.length;i++)
         if(L.data[i] == e)
@@ -39,13 +43,15 @@ int LocateElem(SqList L, ElemType e){
     return 0;
 }
 
-bool Empty(SqList L){
+bool Empty(SqList L)
+{
     if(L.length == 0)
         return true;
     else return false;
 }
 
-int AllList(SqList L){
+int AllList(SqList L)
+{
     if(!Empty(L)){
         int i;
         cout<<"当前线性表中的元素为：";
@@ -56,6 +62,7 @@ int AllList(SqList L){
     }
     else return 0;
 }
+
 int main(){
     SqList L;
     int loc;
