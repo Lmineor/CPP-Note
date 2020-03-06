@@ -14,6 +14,8 @@ typedef struct BiTNode{
 }BiTNode,*BiTree;
 
 
+
+
 void PreOrder(BiTree T); //先序遍历
 void InOrder(BiTree T); //中序遍历
 void PostOrder(BiTree T); //后续遍历

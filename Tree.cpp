@@ -1,6 +1,8 @@
-# include"include/tree.h"
+# include "include/tree.h"
 #include "include/SqStack.h"
+#include "include/SqQueue.h"
 
+typedef BiTNode ElemType;
 
 void PreOrder(BiTree T)
 {
@@ -32,7 +34,8 @@ void PostOrder(BiTree T)
 }
 
 
-void LevelOrder(BiTree T)
+void InOrder1(BiTree T)
+//二叉树中序遍历的非递归算法，算法需要借助一个栈
 {   
     SqStack S;
     InitStack(S); 
@@ -49,10 +52,37 @@ void LevelOrder(BiTree T)
             Pop(S, p);
             visit(p);
         }
-        
     }
     
 }
+
+
+void LevelOrder(BiTree T)
+{
+    InitQueue(Q);
+    BiTree p;
+    EnQueue(Q, T); //将根节点入队
+    while (!QueueEmpty(Q))
+    {
+        DeQueue(Q, p); //队头元素出队
+        visit(p);
+        if(p->lchild != NULL)
+        {
+            EnQueue(Q, p->lchild);
+        }
+        if(p->rchild!=NULL)
+        {
+            EnQueue(Q, p->rchild);//右子树不空，则右子树入队列
+        }
+    }
+    
+}
+
+
+
+/*树与二叉树的应用*/
+
+
 
 void visit(BiTree T)
 {
