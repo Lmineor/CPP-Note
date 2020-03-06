@@ -9,7 +9,7 @@ int Search_Seq(SSTable ST, ElemType key)
 
 int Binary_Search(SSTable ST,ElemType key)
 {
-    int low = 0;high = ST.TableLen-1,mid;
+    int low = 0,high = ST.TableLen-1,mid;
     while (low<=high)
     {
         mid = (low+high)/2;
