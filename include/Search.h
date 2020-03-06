@@ -12,6 +12,7 @@ typedef struct {
 }SSTable;
 
 
-int Search_Seq(SSTable ST, ElemType key)
+int Search_Seq(SSTable ST, ElemType key); //顺序查找
+int Binary_Search(SSTable L,ElemType key); //折半查找
 
 #endif
