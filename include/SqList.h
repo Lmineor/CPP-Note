@@ -22,4 +22,6 @@ int LocateElem(SqList L, ElemType e);
 bool Empty(SqList L);
 int AllList(SqList L);
 
+
+
 #endif
