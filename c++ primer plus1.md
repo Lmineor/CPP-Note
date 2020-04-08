@@ -43,3 +43,5 @@ enum bigstep{first, second=100, third};
 enum {zero, null=0, one, numero_uno=1};
 //zero和null都为0， one和umero_unp都为1.
 ```
+### 枚举的取值范围
+可以将取值范围种的任何整数值
