@@ -76,7 +76,7 @@ void Stock::update(double price)
 }
 
 
-void Stock::show()
+void Stock::show() const
 {
     std::cout << "Company:"<<company
             <<"Share:"<<shares<<'\n'
