@@ -45,3 +45,10 @@ enum {zero, null=0, one, numero_uno=1};
 ```
 ### 枚举的取值范围
 可以将取值范围种的任何整数值
+假如bits和myflag定义如下
+```cpp
+enum bits{one=1, two=2, four=4, eight=8};
+bits myflag;
+//下面的代码是合法的
+myflag = bits(6);
+```
