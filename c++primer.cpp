@@ -1,21 +1,23 @@
 #include <iostream>
-int main(){
-    using namespace std;
-    int nights = 1001;
-    int* pt = new int; //给一个int的类型的指针分配空间
-    *pt = 1001;
-    cout<<"nights value = ";
-    cout<< nights << ":location" <<&nights<<endl;
-    cout<< "int";
-    cout<<"value = "<<*pt<<":location = "<<pt <<endl;
-    double* pd = new double;
-    *pd = 100000001.0;
+#include <cstring>
 
-    cout <<"double";
-    cout<<"value = "<<*pd<<":location = "<<pd <<endl;
-    cout<<"location of pointer pd:"<<&pd <<endl;
-    cout<<"size of pt = "<<sizeof(pt)<<endl;
-    cout<<":size of pd = "<<sizeof(pd);
-    cout<<":size of *pd = "<<sizeof(*pd)<<endl;
+using namespace std;
+char* getname(void); //函数声明
+int main()
+{
+    char * name; //create pointer but no storage
+    name = getname(); //assign address of string to name
+    cout<<name<<" at "<<(int *) name<<endl;
+    delete [] name;
     return 0;
+}
+
+char * getname() //返回新string的指针
+{
+    char temp[80];
+    cout<<"Enter last name:";
+    cin>>temp;
+    char * pn = new char[strlen(temp) + 1];
+    strcpy(pn, temp); // copy string into smaller space
+    return pn; //temp lost when funcction ends
 }
