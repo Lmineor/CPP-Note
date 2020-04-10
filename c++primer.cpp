@@ -1,23 +1,19 @@
 #include <iostream>
-#include <cstring>
-
-using namespace std;
-char* getname(void); //函数声明
+const int ArSize = 8;
+int sum_arr(int arr[], int n); //函数声明
 int main()
 {
-    char * name; //create pointer but no storage
-    name = getname(); //assign address of string to name
-    cout<<name<<" at "<<(int *) name<<endl;
-    delete [] name;
+    using namespace std;
+    int cookies[ArSize] = {1, 2, 4, 5, 6, 6, 8, 4};
+    int sum = sum_arr(cookies, ArSize);
+    cout<<"Total cookies eaten:"<<sum<<endl;
     return 0;
 }
 
-char * getname() //返回新string的指针
+int sum_arr(int arr[], int n)
 {
-    char temp[80];
-    cout<<"Enter last name:";
-    cin>>temp;
-    char * pn = new char[strlen(temp) + 1];
-    strcpy(pn, temp); // copy string into smaller space
-    return pn; //temp lost when funcction ends
+    int total = 0;
+    for (int i=0; i<n; i++)
+        total = total + arr[i];
+    return total;
 }
