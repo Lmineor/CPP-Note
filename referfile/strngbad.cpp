@@ -1,4 +1,4 @@
-<div id="stringbad.cpp"></div>
+<div id="strngbad.cpp"></div>
 //strngbad.cpp
 #include<cstring>
 #include "stringbad.h"
