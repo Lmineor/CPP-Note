@@ -161,8 +161,31 @@ scores.erase(scores.begin(), socores.begin()+2);    //即删除begin()和begin()
 第一个参数指定新元素的插入位置
 第二个、第三个迭代器参数定义了被插入区间，该区间通常是另一个容器对象的一部分
 例如：下面的代码将矢量new_v 中除了第一个元素之外的所有元素的插入到old_v矢量的第一个元素前面
+```cpp
 vector<int> old_v;
 vector<int> new_v;
 ...
 old_v.insert(old_v.begin(), new_v.bein()+1, new_v.end())
 ```
+
+### 16.3.3 对矢量可执行的其他操作
+3个代表的STL函数：
+for_each()、random_shuffle()和sort().
+- for_each() 接受3个参数，前两个是定义容器中区间的迭代器，最后一个是指向函数的指针（更普遍的说，最后一个参数是一个函数对象）。
+
+for_each()函数将被指向的函数应用于容器区间中的各个元素。被指向的函数不能修改容器元素的值。可以用for_each()函数代替for循环。
+例如：可以将代码：
+```cpp
+vector<Review>::iterator pr;
+for(pr=books.begin(); pr!=books.end(); pr++)
+    ShowReview(*pr);
+//替换为
+for_each(books.begin(), books.end(), ShowReview);
+```
+这样可避免显式的使用迭代器变量
+- Random_shuffle() 函数接收两个指定区间的迭代器参数，并随机排列该区间中的元素。例如，下面的语句随机排列books矢量中所有元素：
+```cpp
+random_shuffle(books.begin(), books.end());
+```
+
+- sort()函数
