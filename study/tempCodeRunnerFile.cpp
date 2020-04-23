@@ -1,0 +1,1 @@
+ut << & single_quotation << endl;
