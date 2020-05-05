@@ -12,7 +12,7 @@ namespace VER_A{
     struct expenses
     {
         double expenses
-    }
+    };
 
     //function to modify array object
     void fill(double *pa, int Seasons);
